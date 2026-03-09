@@ -153,13 +153,8 @@ function validateLoginId(loginId) {
     return "This field should not start or end with whitespaces";
   }
 
-  const regex = /^[a-zA-Z0-9@._-]+$/;
+  const regex = /^[a-zA-Z0-9._-]+$/;
   if (!regex.test(loginId)) {
-    return "Invalid LoginID format";
-  }
-
-  const atCount = (loginId.match(/@/g) || []).length;
-  if (atCount > 1) {
     return "Invalid LoginID format";
   }
 
